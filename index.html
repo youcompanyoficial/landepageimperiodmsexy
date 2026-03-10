@@ -1,0 +1,813 @@
+<head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17823937267">
+</script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-17823937267');
+</script>
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Império DM Sexy — Sex Shop em Goiânia</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #0a0608;
+    --deep: #140d10;
+    --wine: #6b1a2a;
+    --rose: #c4435a;
+    --blush: #e8788a;
+    --gold: #c9965a;
+    --cream: #f5e6d8;
+    --white: #fdf5f0;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--black);
+    color: var(--white);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    overflow-x: hidden;
+  }
+
+  /* NOISE TEXTURE */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.4;
+  }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    padding: 40px 24px 60px;
+    background:
+      radial-gradient(ellipse 80% 60% at 50% 0%, rgba(107,26,42,0.5) 0%, transparent 70%),
+      radial-gradient(ellipse 60% 40% at 80% 80%, rgba(196,67,90,0.15) 0%, transparent 60%),
+      var(--black);
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--wine), var(--rose), var(--wine), transparent);
+  }
+
+  .badge {
+    display: inline-block;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    border: 1px solid rgba(201,150,90,0.4);
+    padding: 6px 16px;
+    border-radius: 100px;
+    margin-bottom: 32px;
+    animation: fadeUp 0.8s ease forwards;
+    opacity: 0;
+  }
+
+  .hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(52px, 12vw, 100px);
+    font-weight: 300;
+    line-height: 0.9;
+    letter-spacing: -0.02em;
+    margin-bottom: 12px;
+    animation: fadeUp 0.8s 0.15s ease forwards;
+    opacity: 0;
+  }
+
+  .hero-title em {
+    font-style: italic;
+    color: var(--rose);
+  }
+
+  .hero-sub {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(18px, 4vw, 28px);
+    font-weight: 300;
+    font-style: italic;
+    color: rgba(245,230,216,0.6);
+    margin-bottom: 48px;
+    animation: fadeUp 0.8s 0.3s ease forwards;
+    opacity: 0;
+  }
+
+  .cta-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: linear-gradient(135deg, var(--wine), var(--rose));
+    color: var(--white);
+    text-decoration: none;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 18px 40px;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+    animation: fadeUp 0.8s 0.45s ease forwards;
+    opacity: 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta-primary::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, var(--rose), var(--blush));
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .cta-primary:hover::before { opacity: 1; }
+  .cta-primary:hover { transform: translateY(-2px); box-shadow: 0 20px 60px rgba(196,67,90,0.4); }
+
+  .cta-primary span { position: relative; z-index: 1; }
+
+  .cta-icon { font-size: 18px; position: relative; z-index: 1; }
+
+  .trust-bar {
+    display: flex;
+    gap: 32px;
+    margin-top: 56px;
+    flex-wrap: wrap;
+    justify-content: center;
+    animation: fadeUp 0.8s 0.6s ease forwards;
+    opacity: 0;
+  }
+
+  .trust-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(245,230,216,0.5);
+  }
+
+  .trust-item .dot {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--rose);
+    flex-shrink: 0;
+  }
+
+  /* SECTION LABEL */
+  .section-label {
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 500;
+    margin-bottom: 16px;
+    display: block;
+  }
+
+  /* PRODUTOS */
+  .produtos {
+    padding: 100px 24px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .produtos-header {
+    text-align: center;
+    margin-bottom: 64px;
+  }
+
+  .produtos-header h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(36px, 7vw, 64px);
+    font-weight: 300;
+    line-height: 1;
+  }
+
+  .produtos-header h2 em {
+    font-style: italic;
+    color: var(--rose);
+  }
+
+  .produtos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2px;
+  }
+
+  .produto-card {
+    background: var(--deep);
+    padding: 40px 32px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    border: 1px solid rgba(107,26,42,0.3);
+  }
+
+  .produto-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--rose), transparent);
+    transform: scaleX(0);
+    transition: transform 0.4s ease;
+  }
+
+  .produto-card:hover::before { transform: scaleX(1); }
+  .produto-card:hover { background: rgba(20,13,16,0.9); transform: translateY(-4px); }
+
+  .produto-emoji {
+    font-size: 36px;
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  .produto-nome {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px;
+    font-weight: 400;
+    margin-bottom: 10px;
+    color: var(--cream);
+  }
+
+  .produto-desc {
+    font-size: 13px;
+    line-height: 1.7;
+    color: rgba(245,230,216,0.5);
+    margin-bottom: 24px;
+  }
+
+  .produto-tag {
+    display: inline-block;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--rose);
+    border: 1px solid rgba(196,67,90,0.3);
+    padding: 4px 12px;
+    border-radius: 2px;
+  }
+
+  /* DIFERENCIAIS */
+  .diferenciais {
+    padding: 80px 24px;
+    background: linear-gradient(180deg, transparent, rgba(107,26,42,0.08), transparent);
+    border-top: 1px solid rgba(107,26,42,0.2);
+    border-bottom: 1px solid rgba(107,26,42,0.2);
+  }
+
+  .diferenciais-inner {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .diferenciais-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 48px;
+    margin-top: 48px;
+  }
+
+  .diferencial {
+    text-align: center;
+  }
+
+  .diferencial-icon {
+    font-size: 32px;
+    margin-bottom: 16px;
+    display: block;
+  }
+
+  .diferencial h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 8px;
+    color: var(--cream);
+  }
+
+  .diferencial p {
+    font-size: 13px;
+    line-height: 1.6;
+    color: rgba(245,230,216,0.45);
+  }
+
+  /* DEPOIMENTOS */
+  .depoimentos {
+    padding: 100px 24px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .depoimentos-header {
+    text-align: center;
+    margin-bottom: 56px;
+  }
+
+  .depoimentos-header h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(32px, 6vw, 54px);
+    font-weight: 300;
+  }
+
+  .depoimentos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2px;
+  }
+
+  .depoimento {
+    background: var(--deep);
+    padding: 32px;
+    border: 1px solid rgba(107,26,42,0.2);
+    position: relative;
+  }
+
+  .depoimento::before {
+    content: '"';
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 80px;
+    color: var(--wine);
+    opacity: 0.4;
+    position: absolute;
+    top: 8px;
+    left: 24px;
+    line-height: 1;
+  }
+
+  .depoimento-texto {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 17px;
+    font-style: italic;
+    line-height: 1.6;
+    color: var(--cream);
+    margin-bottom: 20px;
+    padding-top: 32px;
+  }
+
+  .depoimento-autor {
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(245,230,216,0.4);
+  }
+
+  .estrelas {
+    color: var(--gold);
+    font-size: 12px;
+    margin-bottom: 8px;
+    letter-spacing: 2px;
+  }
+
+  /* LOCALIZAÇÃO */
+  .localizacao {
+    padding: 80px 24px;
+    text-align: center;
+    background: var(--deep);
+    border-top: 1px solid rgba(107,26,42,0.2);
+  }
+
+  .localizacao h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(28px, 5vw, 48px);
+    font-weight: 300;
+    margin-bottom: 12px;
+  }
+
+  .localizacao p {
+    font-size: 14px;
+    color: rgba(245,230,216,0.5);
+    margin-bottom: 8px;
+  }
+
+  .regioes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin: 32px 0 48px;
+  }
+
+  .regiao-tag {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(245,230,216,0.6);
+    border: 1px solid rgba(107,26,42,0.4);
+    padding: 6px 16px;
+    border-radius: 100px;
+  }
+
+  /* CTA FINAL */
+  .cta-final {
+    padding: 100px 24px;
+    text-align: center;
+    position: relative;
+    background:
+      radial-gradient(ellipse 70% 50% at 50% 100%, rgba(107,26,42,0.4) 0%, transparent 70%),
+      var(--black);
+  }
+
+  .cta-final h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(38px, 8vw, 72px);
+    font-weight: 300;
+    line-height: 1;
+    margin-bottom: 16px;
+  }
+
+  .cta-final h2 em {
+    font-style: italic;
+    color: var(--rose);
+  }
+
+  .cta-final p {
+    font-size: 14px;
+    color: rgba(245,230,216,0.5);
+    margin-bottom: 48px;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .cta-secondary {
+    display: block;
+    margin-top: 20px;
+    font-size: 12px;
+    color: rgba(245,230,216,0.35);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  /* FOOTER */
+  footer {
+    padding: 32px 24px;
+    border-top: 1px solid rgba(107,26,42,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: gap;
+    gap: 16px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .footer-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: rgba(245,230,216,0.4);
+  }
+
+  .footer-brand em { font-style: italic; color: var(--rose); }
+
+  .footer-links {
+    display: flex;
+    gap: 24px;
+  }
+
+  .footer-links a {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(245,230,216,0.3);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover { color: var(--rose); }
+
+  /* FLOATING CTA */
+  .floating-cta {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 100;
+    animation: pulse 2s infinite;
+  }
+
+  .floating-cta a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(135deg, #25D366, #128C7E);
+    color: white;
+    text-decoration: none;
+    padding: 14px 24px;
+    border-radius: 100px;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    box-shadow: 0 8px 32px rgba(37,211,102,0.4);
+    transition: all 0.3s;
+  }
+
+  .floating-cta a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 48px rgba(37,211,102,0.5);
+  }
+
+  /* NÚMERO */
+  .numero-vendas {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(60px, 15vw, 120px);
+    font-weight: 300;
+    color: rgba(107,26,42,0.3);
+    line-height: 1;
+    display: block;
+    text-align: center;
+    padding: 40px 0 0;
+  }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.03); }
+  }
+
+  /* INTERSECTION OBSERVER CLASSES */
+  .reveal {
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+
+  /* DIVIDER */
+  .divider {
+    width: 40px;
+    height: 1px;
+    background: linear-gradient(90deg, var(--wine), var(--rose));
+    margin: 20px auto;
+  }
+
+  @media (max-width: 600px) {
+    .trust-bar { gap: 16px; }
+    footer { flex-direction: column; text-align: center; }
+    .floating-cta a { padding: 12px 20px; font-size: 12px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- FLOATING WHATSAPP -->
+<div class="floating-cta">
+  <a href="https://wa.me/+5562994092674?text=Olá!+vim+pelo+anúncio+e+quero+conhecer+os+produtos" target="_blank">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    Falar no WhatsApp
+  </a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <span class="badge">✦ Sex Shop em Goiânia ✦</span>
+
+  <h1 class="hero-title">
+    Império<br><em>DM Sexy</em>
+  </h1>
+
+  <p class="hero-sub">O prazer que você merece, com a discrição que você precisa</p>
+
+  <a href="https://wa.me/+5562994092674?text=Olá!+vim+pelo+anúncio+e+quero+conhecer+os+produtos" class="cta-primary" target="_blank">
+    <span class="cta-icon">🔥</span>
+    <span>Quero conhecer os produtos</span>
+  </a>
+
+  <div class="trust-bar">
+    <div class="trust-item"><span class="dot"></span> Entrega discreta</div>
+    <div class="trust-item"><span class="dot"></span> Embalagem lacrada</div>
+    <div class="trust-item"><span class="dot"></span> Goiânia e região</div>
+    <div class="trust-item"><span class="dot"></span> Atendimento rápido</div>
+  </div>
+</section>
+
+<!-- PRODUTOS -->
+<section class="produtos">
+  <div class="produtos-header reveal">
+    <span class="section-label">Mais Pedidos</span>
+    <h2>Produtos que fazem<br><em>a diferença</em></h2>
+    <div class="divider"></div>
+  </div>
+
+  <div class="produtos-grid">
+    <div class="produto-card reveal reveal-delay-1">
+      <span class="produto-emoji">💦</span>
+      <h3 class="produto-nome">Géis para Sexo Oral</h3>
+      <p class="produto-desc">Sabores irresistíveis que transformam qualquer momento em algo inesquecível. Fórmula segura e aprovada.</p>
+      <span class="produto-tag">Mais vendido</span>
+    </div>
+
+    <div class="produto-card reveal reveal-delay-2">
+      <span class="produto-emoji">💜</span>
+      <h3 class="produto-nome">Vibradores</h3>
+      <p class="produto-desc">Dos modelos discretos aos mais potentes. Variedade completa para todos os gostos e momentos.</p>
+      <span class="produto-tag">Top da semana</span>
+    </div>
+
+    <div class="produto-card reveal reveal-delay-3">
+      <span class="produto-emoji">🌹</span>
+      <h3 class="produto-nome">Lingerie & Fantasias</h3>
+      <p class="produto-desc">Peças que despertam o desejo e transformam a noite. Tamanhos variados, estilo garantido.</p>
+      <span class="produto-tag">Novidades</span>
+    </div>
+
+    <div class="produto-card reveal reveal-delay-1">
+      <span class="produto-emoji">✨</span>
+      <h3 class="produto-nome">Óleos & Géis</h3>
+      <p class="produto-desc">Massagens, aquecimento e muito mais. Produtos que amplificam cada sensação de forma natural.</p>
+      <span class="produto-tag">Exclusivo</span>
+    </div>
+
+    <div class="produto-card reveal reveal-delay-2">
+      <span class="produto-emoji">🎁</span>
+      <h3 class="produto-nome">Kits para Casais</h3>
+      <p class="produto-desc">Combinações perfeitas para noites especiais. Presente ideal que surpreende de verdade.</p>
+      <span class="produto-tag">Presente perfeito</span>
+    </div>
+
+    <div class="produto-card reveal reveal-delay-3">
+      <span class="produto-emoji">🔮</span>
+      <h3 class="produto-nome">Acessórios Íntimos</h3>
+      <p class="produto-desc">Linha completa de acessórios para quem quer explorar novidades com segurança e qualidade.</p>
+      <span class="produto-tag">Variedade</span>
+    </div>
+  </div>
+</section>
+
+<!-- NÚMERO SOCIAL PROOF -->
+<div style="text-align:center; padding: 0 24px 20px; overflow: hidden;">
+  <span class="numero-vendas reveal">+500</span>
+  <p style="font-size:13px; letter-spacing:0.2em; text-transform:uppercase; color:rgba(245,230,216,0.3); margin-top: -20px; padding-bottom: 60px;" class="reveal">clientes satisfeitos em Goiânia</p>
+</div>
+
+<!-- DIFERENCIAIS -->
+<section class="diferenciais">
+  <div class="diferenciais-inner">
+    <div style="text-align:center;" class="reveal">
+      <span class="section-label">Por que a gente?</span>
+      <h2 style="font-family:'Cormorant Garamond',serif; font-size:clamp(28px,5vw,48px); font-weight:300;">Discrição <em style="font-style:italic; color:var(--rose);">é tudo</em></h2>
+      <div class="divider"></div>
+    </div>
+    <div class="diferenciais-grid">
+      <div class="diferencial reveal reveal-delay-1">
+        <span class="diferencial-icon">📦</span>
+        <h3>Embalagem Discreta</h3>
+        <p>Caixa lacrada sem identificação do produto. Ninguém precisa saber o que está dentro.</p>
+      </div>
+      <div class="diferencial reveal reveal-delay-2">
+        <span class="diferencial-icon">⚡</span>
+        <h3>Entrega Rápida</h3>
+        <p>Goiânia e região metropolitana. Agilidade e pontualidade em cada pedido.</p>
+      </div>
+      <div class="diferencial reveal reveal-delay-3">
+        <span class="diferencial-icon">🔒</span>
+        <h3>Sigilo Total</h3>
+        <p>Sua privacidade é nossa prioridade. Dados protegidos e atendimento sigiloso.</p>
+      </div>
+      <div class="diferencial reveal reveal-delay-1">
+        <span class="diferencial-icon">💬</span>
+        <h3>Atendimento Humano</h3>
+        <p>Atendimento personalizado no WhatsApp. Tiramos todas as suas dúvidas com cuidado.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DEPOIMENTOS -->
+<section class="depoimentos">
+  <div class="depoimentos-header reveal">
+    <span class="section-label">Quem já comprou</span>
+    <h2 style="font-family:'Cormorant Garamond',serif; font-weight:300;">O que nossos clientes <em style="font-style:italic; color:var(--rose);">falam</em></h2>
+    <div class="divider"></div>
+  </div>
+
+  <div class="depoimentos-grid">
+    <div class="depoimento reveal reveal-delay-1">
+      <div class="estrelas">★★★★★</div>
+      <p class="depoimento-texto">Fiquei com medo de comprar online, mas a entrega foi super discreta. A embalagem não diz nada e chegou rapidinho. Amei!</p>
+      <span class="depoimento-autor">— Cliente de Goiânia</span>
+    </div>
+    <div class="depoimento reveal reveal-delay-2">
+      <div class="estrelas">★★★★★</div>
+      <p class="depoimento-texto">O atendimento no WhatsApp é incrível, me ajudaram a escolher o produto certo. Qualidade muito boa e entrega no mesmo dia!</p>
+      <span class="depoimento-autor">— Cliente de Aparecida de Goiânia</span>
+    </div>
+    <div class="depoimento reveal reveal-delay-3">
+      <div class="estrelas">★★★★★</div>
+      <p class="depoimento-texto">Comprei como presente pra mim mesma e me arrependi de não ter comprado antes. Produto exatamente como descrito. Voltarei!</p>
+      <span class="depoimento-autor">— Cliente de Goiânia</span>
+    </div>
+  </div>
+</section>
+
+<!-- LOCALIZAÇÃO -->
+<section class="localizacao reveal">
+  <span class="section-label">Atendemos na sua região</span>
+  <h2>Entregamos em <em style="font-style:italic; color:var(--rose);">toda Goiânia</em></h2>
+  <div class="divider"></div>
+  <p style="margin-top:16px;">e região metropolitana</p>
+
+  <div class="regioes">
+    <span class="regiao-tag">Goiânia</span>
+    <span class="regiao-tag">Aparecida de Goiânia</span>
+    <span class="regiao-tag">Trindade</span>
+    <span class="regiao-tag">Senador Canedo</span>
+    <span class="regiao-tag">Goianira</span>
+    <span class="regiao-tag">Nerópolis</span>
+    <span class="regiao-tag">Hidrolândia</span>
+    <span class="regiao-tag">Abadia de Goiás</span>
+  </div>
+
+  <a href="https://wa.me/+5562994092674?text=Olá!+quero+saber+se+vocês+entregam+na+minha+região" class="cta-primary" target="_blank" style="margin: 0 auto; display: inline-flex;">
+    <span class="cta-icon">📍</span>
+    <span>Verificar minha região</span>
+  </a>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-final">
+  <span class="section-label reveal">Pronta para começar?</span>
+  <h2 class="reveal">Fale com a gente<br><em>agora mesmo</em></h2>
+  <p class="reveal">Atendimento rápido, discreto e sem julgamentos. Estamos aqui para te ajudar a escolher o produto perfeito.</p>
+
+  <a href="https://wa.me/+5562994092674?text=Olá!+vim+pelo+anúncio+e+quero+conhecer+os+produtos" class="cta-primary reveal" target="_blank" style="display:inline-flex; margin: 0 auto;">
+    <span class="cta-icon">💬</span>
+    <span>Abrir WhatsApp agora</span>
+  </a>
+
+  <span class="cta-secondary reveal">Entrega discreta • Sigilo total • Atendimento imediato</span>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">Império <em>DM Sexy</em></div>
+  <div class="footer-links">
+    <a href="https://www.instagram.com/dmsexy__" target="_blank">Instagram</a>
+    <a href="https://wa.me/+5562994092674" target="_blank">WhatsApp</a>
+  </div>
+</footer>
+
+<script>
+  // Intersection Observer para animações de scroll
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  reveals.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
